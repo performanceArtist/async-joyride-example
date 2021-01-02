@@ -1,13 +1,16 @@
-import { selector } from '@performance-artist/fp-ts-adt';
-import { pipe } from 'fp-ts/lib/pipeable';
 import React from 'react';
-import { LayoutContainer } from './view/layout.container';
+import { LayoutContainer as EagerLayout } from './eager-view/layout.container';
+import { LayoutContainer as LazyLayout } from './lazy-view/layout.container';
 
-export const App = pipe(
-  LayoutContainer,
-  selector.map(LayoutContainer => () => (
-    <div>
-      <LayoutContainer />
+export const App = () => (
+  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+    <div style={{ width: '40%' }}>
+      <h2>Eager</h2>
+      <EagerLayout />
     </div>
-  )),
+    <div style={{ width: '40%' }}>
+      <h2>Lazy</h2>
+      <LazyLayout />
+    </div>
+  </div>
 );

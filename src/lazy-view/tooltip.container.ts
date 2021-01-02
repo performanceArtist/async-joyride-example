@@ -1,7 +1,7 @@
 import { selector } from '@performance-artist/fp-ts-adt';
 import { withHook } from '@performance-artist/react-utils';
 import { pipe } from 'fp-ts/lib/pipeable';
-import { TourSource } from 'tour/tour.source';
+import { TourSource } from '@performance-artist/async-joyride/dist/tour.source';
 import { TourStepName } from '../tour.model';
 import { Tooltip } from './tooltip.component';
 
